@@ -40,5 +40,8 @@
     "tslib": "^2.1.0",
     "typescript": "^4.2.2",
     "uglify-js": "^3.12.8"
+  },
+  "peerDependencies": {
+    "@angular/animations": "^11.2.3"
   }
 }
