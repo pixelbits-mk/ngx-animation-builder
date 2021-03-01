@@ -1,1 +1,1 @@
-export { animationBuilder, Animation, AnimationState, AnimationTransition, TriggerDefinition } from './src/animation-builder' 
+export { animationBuilder, AnimationTrigger, AnimationState, AnimationTransition, TriggerDefinition } from './src/animation-builder' 

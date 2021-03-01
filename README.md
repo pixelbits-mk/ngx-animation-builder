@@ -122,7 +122,7 @@ The ESM entry point was dropped due to a [Webpack bug](https://github.com/webpac
 # API
 
 
-## `animationBuilder(state: AnimationState)`
+## `animationBuilder(trigger: AnimationTrigger)`
 
 Pass the `animationBuilder` an animation state JSON object:
 

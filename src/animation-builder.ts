@@ -12,14 +12,14 @@ export interface TriggerDefinition {
     states?: AnimationState,
     transitions?: AnimationTransition[]
 }
-export interface Animation {
+export interface AnimationTrigger {
     [trigger: string]: TriggerDefinition
 }
-export function animationBuilder(animation: Animation) {
+export function animationBuilder(animation: AnimationTrigger) {
     return Object.keys(animation).map(t => {
         return trigger(t, [
             ...Object.keys(animation[t].states).map(x => state(x, style(animation[t].states[x]))),
-            ...animation[t].transitions.map(x => transition(x.expression, animate(x.animate, keyframes((x.keyframes || []).map(z => style(z))))))
+            ...animation[t].transitions.map(x => transition(x.expression, animate(x.animate, keyframes((x?.keyframes)?.map(z => style(z))))))
         ])
     })
 }
