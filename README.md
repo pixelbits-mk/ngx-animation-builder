@@ -2,6 +2,10 @@
 
 A library for building angular animations from JSON objects.
 
+## Demo
+
+https://stackblitz.com/edit/angular-ivy-vja9bq?file=src/app/app.component.ts
+
 ## Getting Started
 
 ### Example Usage
