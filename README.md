@@ -128,15 +128,15 @@ Pass the `animationBuilder` an animation state JSON object:
 
 ```ts
 import { animationBuilder } from '@pixelbits/ngx-animation-builder'; 
-import { clickedState } from './clicked-state'
-import { openCloseState } from './open-closed-state'
+import { clickState } from './click-state'
+import { openCloseState } from './open-close-state'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: animationBuilder({ 
-    ...clickedState, 
+    ...clickState, 
     ...openCloseState
   })
 })
@@ -146,21 +146,21 @@ export class AppComponent {
 ```
 Where the JSON format is defined as follows: 
 
-### clicked-state.ts
-```json
-{
-    "clickedState": {
-        "states": {
-            "on": {
+### click-state.ts
+```ts
+export const clickState = {
+    clickState: {
+        states: {
+            on: {
                 "color": "blue"
             },
-            "off": {
+            off: {
                 "color": "red"
             }
         },
-        "transitions": [
-            {  "expression": "on => off", "animate": "1s ease-in" },
-            {  "expression": "off => on", "animate": "1s ease-out" },
+        transitions: [
+            {  expression: "on => off", animate: "1s ease-in" },
+            {  expression: "off => on", animate: "1s ease-out" },
         ]
     }
 }
@@ -168,33 +168,33 @@ Where the JSON format is defined as follows:
 ### open-close-state.ts
 
 You can also add keyframe animations for each transition.
-```json
-{
-    "openCloseState": {
-        "states": {
-            "open": {
-                "backgroundColor": "blue"
+```ts
+export const openCloseState = {
+    openCloseState: {
+        states: {
+            open: {
+                backgroundColor: "blue"
             },
-            "close": {
-                "backgroundColor": "red"
+            close: {
+                backgroundColor: "red"
             }
         },
-        "transitions": [
+        transitions: [
             {  
-                "expression": "* => *", 
-                "animate": "1s ease-in", 
-                "keyframes": [
+                expression: "* => *", 
+                animate: "1s ease-in", 
+                keyframes: [
                 {
-                    "width": "200px",
-                    "offset": 0
+                    width: "200px",
+                    offset: 0
                 },
                 {
-                    "width": "400px",
-                    "offset": 0.5
+                    width: "400px",
+                    offset: 0.5
                 },
                 {
-                    "width": "200px",
-                    "offset": 1.0
+                    width: "200px",
+                    offset: 1.0
                 }] 
 
             }
