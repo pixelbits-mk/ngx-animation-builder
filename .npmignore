@@ -1,0 +1,9 @@
+  
+test/
+src/
+node_modules/
+dist/src/**/*.js
+.gitignore
+rollup.config.js
+tsconfig.js
+index.ts
